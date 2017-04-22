@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://deepesh.me/post/gradientdescentoptimizations/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/tags/gradient-descent/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/tags/machine-learning/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/post/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/tags/python/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/tags/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://deepesh.me/tutorials/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
