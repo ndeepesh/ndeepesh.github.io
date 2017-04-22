@@ -2,52 +2,52 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://deepesh.me/post/gradientdescentoptimizations/</loc>
+    <loc>https://ndeepesh.github.io/post/gradientdescentoptimizations/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://deepesh.me/about/</loc>
+    <loc>https://ndeepesh.github.io/about/</loc>
   </url>
   
   <url>
-    <loc>https://deepesh.me/</loc>
-    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://deepesh.me/tags/gradient-descent/</loc>
+    <loc>https://ndeepesh.github.io/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://deepesh.me/tags/machine-learning/</loc>
+    <loc>https://ndeepesh.github.io/tags/gradient-descent/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://deepesh.me/post/</loc>
+    <loc>https://ndeepesh.github.io/tags/machine-learning/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://deepesh.me/tags/python/</loc>
+    <loc>https://ndeepesh.github.io/post/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://deepesh.me/tags/</loc>
+    <loc>https://ndeepesh.github.io/tags/python/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://deepesh.me/tutorials/</loc>
+    <loc>https://ndeepesh.github.io/tags/</loc>
+    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ndeepesh.github.io/tutorials/</loc>
     <priority>0</priority>
   </url>
   
