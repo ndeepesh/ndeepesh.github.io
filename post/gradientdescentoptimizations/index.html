@@ -19,19 +19,17 @@
     
     <meta property="og:tags" content="Python">
     
-    <meta name="generator" content="Hugo 0.20.2" />
+    <meta name="generator" content="Hugo 0.21-DEV" />
     <title>Gradient Descent Optimizations &middot; Deepesh Nathani</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="/css/prism.css" rel="stylesheet" />
     
-    <link rel="stylesheet" href="https://ndeepesh.github.io//css/style.css">
-    <link rel="stylesheet" href="https://ndeepesh.github.io//css/custom.css">
+    <link rel="stylesheet" href="https://ndeepesh.github.io/css/style.css">
     
     <link href="https://ndeepesh.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Deepesh Nathani" />
     
     
-    <link rel="icon" href="https://ndeepesh.github.io///static/favicon.jpeg" />
+    <link rel="icon" href="https://ndeepesh.github.io//static/favicon.jpeg" />
     
 
     
@@ -101,14 +99,16 @@
 			<div class="row">
 				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
 
-
 <main>
 	<header>
 		<h1>Gradient Descent Optimizations</h1>
 	</header>
 
 	<article>
-		<p>In this blog post I will talk about how different flavours of Gradient Descent help improve convergence of a function. I took <a href="https://en.wikipedia.org/wiki/Rosenbrock_function">Rosenbrock Function</a> for this experiment. It is a non-convex function, the one that we encounter regularly as <em>Cost Functions</em> in machine learning problems.
+		<p><b>Note:</b>
+All the code here is also available in this <a href="https://github.com/ndeepesh/ML-Code/blob/master/experiments/GradientDescentOptimizations.ipynb">notebook</a>. Variable names will be different in notebook then here. <br/></p>
+
+<p>In this blog post we&rsquo;ll talk about how different flavours of Gradient Descent help improve convergence of a function. We take <a href="https://en.wikipedia.org/wiki/Rosenbrock_function">Rosenbrock Function</a> for this experiment. It is a non-convex function, the one that we encounter regularly as <em>Cost Functions</em> in machine learning problems.
 <img src="../../static/GD/RosenbrockFunction.png" alt="Rosenbrock Function" title="Rosenbrock Function" />           <center><em><strong>Rosenbrock Function(Source: Wikipedia)</strong></em></center><br/></p>
 
 <ol>
@@ -117,7 +117,7 @@
 <li>Minimum value of Rosenbrock function then is 0 at (1, 1)<br/></li>
 <li>Gradient of Rosenbrock Function w.r.t <i><b>x</b></i> and <i><b>y</b></i> is below(we need them in Gradient Descent) <br/>
 <center><i>der_Cx(x,y)</i> = $\frac{dC}{dx} = -2(a-x)- 4bx(y-x^2)$, <br/> <i>der_Cy(x,y)</i> = $\frac{dC}{dy} = 2b(y-x^2)$</center></li>
-<li>For Gradient Descent we need a starting point. For this experiment I took (x, y) to be (2, -2) <br/></li>
+<li>For Gradient Descent we need a starting point. For this experiment (x, y) = (2, -2) <br/></li>
 </ol>
 
 <p><strong>Vanilla Gradient Descent</strong> <br/>
@@ -154,10 +154,10 @@
 <img src="../../static/GD/MomentumParams.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
 <img src="../../static/GD/MomentumCost.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
 
-<p>We see that both <i>x</i>, <i>y</i> are converging to (1, 1) much faster than vanilla gradient descent. If you look at the other curve(one on the right) you can see that for initial iterations there are huge oscillations in cost function before it converges to a value of 0. <br/></p>
+<p>We see that both <i>x</i>, <i>y</i> are converging to (1, 1) much faster than vanilla gradient descent. If we look at the other curve(one on the right) we can see that for initial iterations there are huge oscillations in cost function before it converges to a value of 0. <br/></p>
 
 <p><strong>Gradient Descent with Nesterov Momentum</strong> <br/>
-Nesterov Momentum is a variant of momentum concept. If you look at the momentum update closely, there is a way to know which direction we might be moving downhill before actually moving there. Momentum update can be expressed as $$momentum = momentumRate*momentum + learningRate*gradient$$ and our parameter update as $$param  -= momemtum$$ So even before performing the parameter update we know that it will be app. in the direction of $param - momentumRate*momentum$. We can use this information and calculate the gradient of cost function w.r.t. $(param - momentumRate*momentum)$ rather than $param$. Below is the code for same. See <a href="# https://www.reddit.com/r/MachineLearning/comments/3rbxyw/whats_the_difference_between_momentum_based/">1</a> and <a href="https://blogs.princeton.edu/imabandit/2015/06/30/revisiting-nesterovs-acceleration/">2</a> for exact Nesterov update as in code below. <br/></p>
+Nesterov Momentum is a variant of momentum concept. If we look at the momentum update closely, there is a way to know which direction we might be moving downhill before actually moving there. Momentum update can be expressed as $$momentum = momentumRate*momentum + learningRate*gradient$$ and our parameter update as $$param  -= momemtum$$ So even before performing the parameter update we know that it will be app. in the direction of $param - momentumRate*momentum$. We can use this information and calculate the gradient of cost function w.r.t. $(param - momentumRate*momentum)$ rather than $param$. Below is the code for same. See <a href="# https://www.reddit.com/r/MachineLearning/comments/3rbxyw/whats_the_difference_between_momentum_based/">1</a> and <a href="https://blogs.princeton.edu/imabandit/2015/06/30/revisiting-nesterovs-acceleration/">2</a> for exact Nesterov update as in code below. <br/></p>
 
 <pre><code class="language-python">	learningRate, momentumTerm = 0.01, 0.9
 	momentum_x, momentum_y = 0, 0
@@ -213,8 +213,9 @@ RMSProp tries to mitigate the above problem by using only previous <i>k</i> grad
 
 <p>We can see that it reaches convergence much faster than Adagrad. <br/><br/></p>
 
-<p><b>What Next!!</b><br/>
-This is the actual <a href="https://github.com/ndeepesh/ML-Code/blob/master/SGD-Optimizations.ipynb">Jupyter Notebook</a> with all the code. Note: Variable names will be different in notebook then here. Also, if you have time do go through  <a href="http://sebastianruder.com/optimizing-gradient-descent/">1</a> and <a href="http://cs231n.github.io/neural-networks-3/">2</a> to learn many more available Optimization techniques.</p>
+<p><b>More Resources</b><br/>
+1. Sebastian Ruder <a href="http://sebastianruder.com/optimizing-gradient-descent/">Optimizing Gradient Descent</a> <br/>
+2. Stanford&rsquo;s CS-231 class notes on  <a href="http://cs231n.github.io/neural-networks-3/">Gradient Descent</a></p>
 
 	</article>
 </main>
@@ -234,15 +235,6 @@ This is the actual <a href="https://github.com/ndeepesh/ML-Code/blob/master/SGD-
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<script type="text/x-mathjax-config">
-  	MathJax.Hub.Config({
-    	tex2jax: {
-      	inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      	processEscapes: true
-    	}
-  	});
-	</script>
-	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   
   <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
@@ -251,6 +243,4 @@ This is the actual <a href="https://github.com/ndeepesh/ML-Code/blob/master/SGD-
   <script src="https://ndeepesh.github.io//js/App.js"></script>
   
 </body>
-<script src="https://ndeepesh.github.io//js/prism.js"></script>
 </html>
-

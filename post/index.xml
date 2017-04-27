@@ -17,7 +17,8 @@
       <pubDate>Thu, 20 Apr 2017 00:05:01 -0400</pubDate>
       
       <guid>https://ndeepesh.github.io/post/gradientdescentoptimizations/</guid>
-      <description>In this blog post I will talk about how different flavours of Gradient Descent help improve convergence of a function. I took Rosenbrock Function for this experiment. It is a non-convex function, the one that we encounter regularly as Cost Functions in machine learning problems. Rosenbrock Function(Source: Wikipedia)
+      <description>Note: All the code here is also available in this notebook. Variable names will be different in notebook then here. 
+In this blog post we&amp;rsquo;ll talk about how different flavours of Gradient Descent help improve convergence of a function. We take Rosenbrock Function for this experiment. It is a non-convex function, the one that we encounter regularly as Cost Functions in machine learning problems. Rosenbrock Function(Source: Wikipedia)
  Rosenbrock Function: $C(x, y) = (a-x)^2 + b(y-x^2)^2$  For this experiment values of both a and b is 1 Minimum value of Rosenbrock function then is 0 at (1, 1) Gradient of Rosenbrock Function w.</description>
     </item>
     
