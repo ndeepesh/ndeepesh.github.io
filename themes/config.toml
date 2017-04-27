@@ -1,0 +1,50 @@
+baseURL = "https://ndeepesh.github.io/"
+relativeURLs = false
+languageCode = "en-us"
+title = "Deepesh Nathani Blog"
+theme = "hugo-geo"
+paginate = 5
+highlight = true
+
+[taxonomies]
+	tag = "tags"
+	tutorial = "tutorials"
+
+[params]
+	# Render the rotating globe in the sidebar
+	showglobe = true
+
+	# Include favicon
+	favicon = "/static/favicon.jpeg"
+ 	
+	# Google Analytics
+	# analytics = "SHORT-CODE-HERE"
+
+	# Email
+	email = "ndeep_27@yahoo.com"
+	
+	# Header Title for the main page
+	header = "Blog"
+	
+	# Sidebar profile picture
+	profilepic = "/static/img/me.jpg"
+	
+	# Title/subtitle for the sidebar
+	title = "Deepesh Nathani"
+	subtitle = "Software Developer"
+	
+	# Social buttons for sidebar
+	[[params.socialbuttons]]
+	faicon = "facebook"
+	url = "https://www.facebook.com/deepesh.nathani"
+	[[params.socialbuttons]]
+	faicon = "linkedin"
+	url = "https://www.linkedin.com/in/deepeshnathani/"
+	[[params.socialbuttons]]
+	faicon = "github"
+	url = "https://github.com/ndeepesh"
+
+	# Nav links below the profile picture
+	[[params.navlinks]]
+	name = "About"
+	url = "about/"

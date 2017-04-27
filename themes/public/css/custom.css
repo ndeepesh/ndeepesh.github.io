@@ -1,0 +1,18 @@
+body{
+  background-color: #fff
+}
+#menu {
+  background-image: radial-gradient(circle, #333, #080808);
+  border-top: 1px solid #a94442
+}
+#content {
+  border-top: 1px solid #a94442
+}
+h1 {
+  color: #2c3e50
+}
+.panel-header a {
+  color: #476481
+}
+code.has-jax {font: inherit; font-size: 100%; background: inherit; border: inherit;}
+.btn-default {color: #040404; background-color: #eee; font-weight: bold; border: 0px}

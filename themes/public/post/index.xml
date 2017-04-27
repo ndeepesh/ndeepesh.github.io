@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Deepesh Nathani</title>
+    <link>https://ndeepesh.github.io/post/</link>
+    <description>Recent content in Posts on Deepesh Nathani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Apr 2017 00:05:01 -0400</lastBuildDate>
+    
+	<atom:link href="https://ndeepesh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Gradient Descent Optimizations</title>
+      <link>https://ndeepesh.github.io/post/gradientdescentoptimizations/</link>
+      <pubDate>Thu, 20 Apr 2017 00:05:01 -0400</pubDate>
+      
+      <guid>https://ndeepesh.github.io/post/gradientdescentoptimizations/</guid>
+      <description>In this blog post I will talk about how different flavours of Gradient Descent help improve convergence of a function. I took Rosenbrock Function for this experiment. It is a non-convex function, the one that we encounter regularly as Cost Functions in machine learning problems. Rosenbrock Function(Source: Wikipedia)
+ Rosenbrock Function: $C(x, y) = (a-x)^2 + b(y-x^2)^2$  For this experiment values of both a and b is 1 Minimum value of Rosenbrock function then is 0 at (1, 1) Gradient of Rosenbrock Function w.</description>
+    </item>
+    
+  </channel>
+</rss>

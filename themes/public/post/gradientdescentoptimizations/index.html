@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website#">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <meta name="description" content="">
+    <meta property="og:title" content="Gradient Descent Optimizations">
+    
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="2017-04-20">
+    
+    <meta property="og:description" content="">
+    <meta property="og:url" content="https://ndeepesh.github.io/post/gradientdescentoptimizations/">
+    <meta property="og:site_name" content="Deepesh Nathani">
+    
+    <meta property="og:tags" content="Machine Learning">
+    
+    <meta property="og:tags" content="Gradient Descent">
+    
+    <meta property="og:tags" content="Python">
+    
+    <meta name="generator" content="Hugo 0.20.2" />
+    <title>Gradient Descent Optimizations &middot; Deepesh Nathani</title>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="/css/prism.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="https://ndeepesh.github.io//css/style.css">
+    <link rel="stylesheet" href="https://ndeepesh.github.io//css/custom.css">
+    
+    <link href="https://ndeepesh.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Deepesh Nathani" />
+    
+    
+    <link rel="icon" href="https://ndeepesh.github.io///static/favicon.jpeg" />
+    
+
+    
+    
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			
+				<a class="navbar-brand" href="https://ndeepesh.github.io/">Deepesh Nathani</a>
+			
+		</div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				
+				
+					<li><a href="https://ndeepesh.github.io/about/">About</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</nav>
+<div class="container-fluid">
+	<div class="row">
+		<div id="menu" class="hidden-xs col-sm-4 col-md-3">
+	<div id="menu-content" class="vertical-align">
+		
+			<h1 class="text-center"><a href="https://ndeepesh.github.io/">Deepesh Nathani</a></h1>
+		
+		
+		
+			<small class="text-center center-block">Software Developer</small>
+		
+		
+		
+			<img id="profile-pic" src="https://ndeepesh.github.io///static/img/me.jpg" alt="My Picture" class="img-circle center-block">
+		
+		<div id="social" class="text-center">
+			
+				<a href="https://www.facebook.com/deepesh.nathani"><i class="fa fa-facebook fa-2x"></i></a>
+			
+				<a href="https://www.linkedin.com/in/deepeshnathani/"><i class="fa fa-linkedin fa-2x"></i></a>
+			
+				<a href="https://github.com/ndeepesh"><i class="fa fa-github fa-2x"></i></a>
+			
+
+			<a href="mailto:ndeep_27@yahoo.com"><i class="fa fa-envelope-o fa-2x"></i></a>
+		</div>
+		<div id="links" class="text-center">
+			
+			
+				<a href="https://ndeepesh.github.io/about/">About</a>
+			
+		</div>
+	</div>
+</div>
+
+		<div id="content" class="col-xs-12 col-sm-8 col-md-9">
+			<div class="row">
+				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
+
+
+<main>
+	<header>
+		<h1>Gradient Descent Optimizations</h1>
+	</header>
+
+	<article>
+		<p>In this blog post I will talk about how different flavours of Gradient Descent help improve convergence of a function. I took <a href="https://en.wikipedia.org/wiki/Rosenbrock_function">Rosenbrock Function</a> for this experiment. It is a non-convex function, the one that we encounter regularly as <em>Cost Functions</em> in machine learning problems.
+<img src="../../static/GD/RosenbrockFunction.png" alt="Rosenbrock Function" title="Rosenbrock Function" />           <center><em><strong>Rosenbrock Function(Source: Wikipedia)</strong></em></center><br/></p>
+
+<ol>
+<li>Rosenbrock Function:  $C(x, y) = (a-x)^2 + b(y-x^2)^2$ <br/></li>
+<li>For this experiment values of both <i>a</i> and <i>b</i> is 1<br/></li>
+<li>Minimum value of Rosenbrock function then is 0 at (1, 1)<br/></li>
+<li>Gradient of Rosenbrock Function w.r.t <i><b>x</b></i> and <i><b>y</b></i> is below(we need them in Gradient Descent) <br/>
+<center><i>der_Cx(x,y)</i> = $\frac{dC}{dx} = -2(a-x)- 4bx(y-x^2)$, <br/> <i>der_Cy(x,y)</i> = $\frac{dC}{dy} = 2b(y-x^2)$</center></li>
+<li>For Gradient Descent we need a starting point. For this experiment I took (x, y) to be (2, -2) <br/></li>
+</ol>
+
+<p><strong>Vanilla Gradient Descent</strong> <br/>
+   Vanilla Gradient Descent updates the function parameters(in our case its <em>x</em> and <em>y</em>) by simply going in the direction of greatest descent. It controls this with a hyperparameter named <em>learning-rate</em>. Below is the code for it. <br/></p>
+
+<pre><code class="language-python">	learningRate = 0.01
+	for ite in range(iterations):
+		x -= learningRate*der_Cx(x, y)
+		y -= learningRate*der_Cy(x, y)
+</code></pre>
+
+<p>Below are the plots on how <i>x</i>, <i>y</i> and <i>C</i> vary with number of iterations <br/>
+<img src="../../static/GD/VanillaParamsvsIterations.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/VanillaCostvsIterations.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
+
+<p>When the number of iterations are very small(70 in this case) we see that our function converges very slowly to minimum. Below are the plots when number of iterations were increased(to 1000). We can see that both parameters converge to minimum value.<br/></p>
+
+<p><img src="../../static/GD/VanillaParamsInc.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/VanillaCostInc.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
+
+<p><strong>Gradient Descent with Momentum</strong> <br/>
+    Intuition behind introducing momentum in Gradient Descent stems from the fact that we are moving downhill in our cost function. When adding momentum we give impetus to our parameters to reach bottom quickly. We do this by accumulating all previous gradients and scaling it down using <i>MomentumRate</i>. Imagine like a big snowball falling from a mountain. As it goes down it gains more momentum. Code is below: <br/></p>
+
+<pre><code class="language-python">	learningRate, momentumTerm = 0.01, 0.9
+	momentum_x, momentum_y = 0, 0
+	for ite in range(iterations):
+		momentum_x = momentumTerm*momentum_x + learningRate*der_Cx(x, y)
+		momentum_y = momentumTerm*momentum_y + learningRate*der_Cy(x, y)
+		x -= momentum_x
+		y -= momentum_y
+</code></pre>
+
+<p>Below are the plots on how <i>x</i>, <i>y</i> and <i>C</i> vary with number of iterations <br/>
+<img src="../../static/GD/MomentumParams.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/MomentumCost.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
+
+<p>We see that both <i>x</i>, <i>y</i> are converging to (1, 1) much faster than vanilla gradient descent. If you look at the other curve(one on the right) you can see that for initial iterations there are huge oscillations in cost function before it converges to a value of 0. <br/></p>
+
+<p><strong>Gradient Descent with Nesterov Momentum</strong> <br/>
+Nesterov Momentum is a variant of momentum concept. If you look at the momentum update closely, there is a way to know which direction we might be moving downhill before actually moving there. Momentum update can be expressed as $$momentum = momentumRate*momentum + learningRate*gradient$$ and our parameter update as $$param  -= momemtum$$ So even before performing the parameter update we know that it will be app. in the direction of $param - momentumRate*momentum$. We can use this information and calculate the gradient of cost function w.r.t. $(param - momentumRate*momentum)$ rather than $param$. Below is the code for same. See <a href="# https://www.reddit.com/r/MachineLearning/comments/3rbxyw/whats_the_difference_between_momentum_based/">1</a> and <a href="https://blogs.princeton.edu/imabandit/2015/06/30/revisiting-nesterovs-acceleration/">2</a> for exact Nesterov update as in code below. <br/></p>
+
+<pre><code class="language-python">	learningRate, momentumTerm = 0.01, 0.9
+	momentum_x, momentum_y = 0, 0
+	for ite in range(iterations):
+		momentum_x = (momentumTerm**2)*momentum_x + (1 + momentumTerm)*learningRate*der_Cx(x, y)
+		momentum_y = (momentumTerm**2)*momentum_y + (1 + momentumTerm)*learningRate*der_Cy(x, y)
+		x -= momentum_x
+		y -= momentum_y
+</code></pre>
+
+<p>Below are the plots on how <i>x</i>, <i>y</i> and <i>C</i> vary with number of iterations <br/>
+<img src="../../static/GD/NesterovParams.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/NesterovCost.png" alt="Rosenbrock Function" title="Rosenbrock Function" /><br/></p>
+
+<p>Looking at how Cost varies with iterations, we can see that there is some sort of stability right from start compared to previous approach. Also, both <i>x</i>, <i>y</i> converge to minimum in around 50 iterations compared to 70 iterations. Intuitively our ball is now rolling with some knowledge on where to head next.</p>
+
+<p><strong>Adagrad</strong> <br/>
+Imagine that our machine learning problem has 2 features and one of them is very sparse. This means that during gradient descent it will have less number of updates compared to the feature that occur more frequently. This would not be an ideal situation since that sparse feature can be very important. Because it moves very slowly it may never reach its minimum value. Adagrad is an adaptive learning rate approach that tackles this problem. It divides the learning rate of a parameter by square root of sum of squares of all its previous gradients. Below is the code for it.</p>
+
+<pre><code class="language-python">	learningRate, epsilon = 0.5, 1e-8
+	all_grads_squared_x, all_grads_squared_y = 0, 0
+	for ite in range(iterations):
+		all_grads_squared_x += der_Cx**2
+		all_grads_squared_y += der_Cy**2
+		x -= (learningRate/np.sqrt(all_grads_squared_x) + epsilon)*der_Cx
+		y -= (learningRate/np.sqrt(all_grads_squared_y) + epsilon)*der_Cy
+</code></pre>
+
+<p>Below are the plots on how <i>x</i>, <i>y</i> and <i>C</i> vary with number of iterations <br/>
+<img src="../../static/GD/AdagradParams.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/AdagradCost.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
+
+<p>Even without momentum this is faster than Vanilla Gradient Descent. Problem with Adagrad is that its parameter update is very aggressive. If the denominator term grows huge eventually learning will stop since the updates to parameters will be infinitesimal. Also, one thing to notice for adaptive learning rates is that if we choose a small learning rate initially (here we have chosen 0.5 rather then 0.01) then learning stops very early. Below plots justify this. Updates to parameters are very small(Initial Learning Rate for below plot = 0.01)</p>
+
+<p><img src="../../static/GD/AdagradParamsW.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/AdagradCostW.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
+
+<p><strong>RMSProp</strong> <br/>
+RMSProp tries to mitigate the above problem by using only previous <i>k</i> gradients. Rather than storing previous <i>k</i> gradients it uses a decaying average of all previous gradients. Below is the code for it. <br/></p>
+
+<pre><code class="language-python">	learningRate, decayingRate , epsilon = 0.5, 0.9, 1e-8
+	all_grads_squared_x, all_grads_squared_y = 0, 0
+	for ite in range(iterations):
+		all_grads_squared_x = decayingRate*all_grads_squared_x + (1 - decayingRate)*der_Cx**2
+		all_grads_squared_y = decayingRate*all_grads_squared_y + (1 - decayingRate)*der_Cy**2
+		x -= (learningRate/np.sqrt(all_grads_squared_x) + epsilon)*der_Cx
+		y -= (learningRate/np.sqrt(all_grads_squared_y) + epsilon)*der_Cy
+</code></pre>
+
+<p>Below are the plots on how <i>x</i>, <i>y</i> and <i>C</i> vary with number of iterations <br/>
+<img src="../../static/GD/RMSParams.png" alt="Rosenbrock Function" title="Rosenbrock Function" />
+<img src="../../static/GD/RMSCost.png" alt="Rosenbrock Function" title="Rosenbrock Function" /> <br/></p>
+
+<p>We can see that it reaches convergence much faster than Adagrad. <br/><br/></p>
+
+<p><b>What Next!!</b><br/>
+This is the actual <a href="https://github.com/ndeepesh/ML-Code/blob/master/SGD-Optimizations.ipynb">Jupyter Notebook</a> with all the code. Note: Variable names will be different in notebook then here. Also, if you have time do go through  <a href="http://sebastianruder.com/optimizing-gradient-descent/">1</a> and <a href="http://cs231n.github.io/neural-networks-3/">2</a> to learn many more available Optimization techniques.</p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://ndeepesh.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
+</div>
+
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script type="text/x-mathjax-config">
+  	MathJax.Hub.Config({
+    	tex2jax: {
+      	inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      	processEscapes: true
+    	}
+  	});
+	</script>
+	<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+  
+  
+  <script src="https://ndeepesh.github.io//js/App.js"></script>
+  
+</body>
+<script src="https://ndeepesh.github.io//js/prism.js"></script>
+</html>
+
