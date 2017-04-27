@@ -8,9 +8,6 @@ env:
   - GIT_EMAIL="ndeep_27@yahoo.com"
   - SOURCE_DIR="public"
   - DEPLOY_BRANCH="source"
-before_script:
-- git clone --branch v2 https://github.com/go-yaml/yaml $GOPATH/src/gopkg.in/yaml.v2
-- go get -u -v github.com/spf13/hugo
 after_success:
 - echo "ndeepesh.github.io" > ./public/CNAME
 - ./scripts/deploy.sh
