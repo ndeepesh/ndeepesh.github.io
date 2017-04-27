@@ -9,7 +9,7 @@ project_url = "https://github.com/ndeepesh/ML-Code/blob/master/SGD-Optimizations
 <b>Note:</b>
 All the code here is also available in this [notebook](https://github.com/ndeepesh/ML-Code/blob/master/experiments/GradientDescentOptimizations.ipynb). Variable names will be different in notebook then here. <br/>
 
-In this blog post we'll talk about how different flavours of Gradient Descent help improve convergence of a function. We take [Rosenbrock Function](https://en.wikipedia.org/wiki/Rosenbrock_function) for this experiment. It is a non-convex function, the one that we encounter regularly as *Cost Functions* in machine learning problems.
+In this blog post we'll talk about how different flavours of Gradient Descent help improve convergence of a function. [Rosenbrock Function](https://en.wikipedia.org/wiki/Rosenbrock_function) was taken for this experiment. It is a non-convex function, the one that we encounter regularly as *Cost Functions* in machine learning problems.
 ![Rosenbrock Function](../../static/GD/RosenbrockFunction.png "Rosenbrock Function")           <center>_**Rosenbrock Function(Source: Wikipedia)**_</center><br/>
 
 
