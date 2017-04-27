@@ -17,3 +17,5 @@ before_install:
 script:
 - git clone https://github.com/alexurquhart/hugo-geo ./themes/hugo-geo
 - hugo
+before_script:
+- go get -u -v github.com/spf13/hugo
