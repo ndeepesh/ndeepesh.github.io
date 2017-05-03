@@ -4,16 +4,17 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="">
-    <meta property="og:title" content="Deepesh Nathani">
+    <meta property="og:title" content="">
     
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
+    <meta property="article:published_time" content="0001-01-01">
     
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://ndeepesh.github.io/">
+    <meta property="og:url" content="https://ndeepesh.github.io/post/dropout/">
     <meta property="og:site_name" content="Deepesh Nathani">
     
     <meta name="generator" content="Hugo 0.21-DEV" />
-    <title>Deepesh Nathani &middot; Deepesh Nathani</title>
+    <title> &middot; Deepesh Nathani</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/css/prism.css" rel="stylesheet" />
@@ -95,78 +96,38 @@
 				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
 
 
-<header>
-	
-	
-		<h1>Blog</h1>
-	
-</header>
+<main>
+	<header>
+		<h1></h1>
+	</header>
 
+	<article>
+		<p>+++ date = &ldquo;2017-05-03T00:07:01-04:00&rdquo;
+title = &ldquo;Dropout Notes&rdquo;
+tags = [ &ldquo;Machine Learning&rdquo;, &ldquo;Regularization&rdquo;] categories = [ &ldquo;Machine Learning&rdquo; ]
++++</p>
 
-	<div class="panel panel-default">
-	<div class="panel-header">
-		<h3>
-			<a href="https://ndeepesh.github.io/post/gradientdescentoptimizations/">Gradient Descent Optimizations</a>
-			<br>
-			<small>
-				20 April 2017
-			</small>
-		</h3>
-	</div>
-	<div class="panel-body">
-		Note: All the code here is also available in this notebook. Variable names will be different in notebook then here. 
-In this blog post we&rsquo;ll talk about how different flavours of Gradient Descent help improve convergence of a function. Rosenbrock Function was taken for this experiment. It is a non-convex function, the one that we encounter regularly as Cost Functions in machine learning problems. Rosenbrock Function(Source: Wikipedia)
- Rosenbrock Function: $C(x, y) = (a-x)^2 + b(y-x^2)^2$  For this experiment values of both a and b is 1 Minimum value of Rosenbrock function then is 0 at (1, 1) Gradient of Rosenbrock Function w.
-		
-			... <a href="https://ndeepesh.github.io/post/gradientdescentoptimizations/">Read More</a>
-		
-	</div>
-	<div class="panel-footer">
-		
-		<small class="text-muted">
-			
-			
-				<a href="https://ndeepesh.github.io/tags/machine-learning"><span class="label label-success">Machine Learning</span></a>
-			
-				<a href="https://ndeepesh.github.io/tags/gradient-descent"><span class="label label-success">Gradient Descent</span></a>
-			
-				<a href="https://ndeepesh.github.io/tags/python"><span class="label label-success">Python</span></a>
-			
-		</small>
-		
-	</div>
+<p><b>Note</b>: <a href="http://www.jmlr.org/papers/volume15/srivastava14a.old/source/srivastava14a.pdf">Here</a> is the original paper by Geoff Hinton introducing Dropout.</p>
+
+<p><i>Dropout Notes</i><br/>
+The core problem which Dropout tries to solve is <b><i>Overfitting</b></i>. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well. Another way to look at this problem(as described in the paper) is that there is just too much of dependency amoung neurons.</p>
+
+<p>Dropout tries to address this problem by <b><i>randomly</b></i> dropping weights(and their corresponding neurons) while training(not in prediction cycle). Errors propagated backwards in backpropagation will also be 0 along that weight. In each training epoch we randomly drop weights i.e. we randomly choose a thinned network out of many possible($O(n^2)$) networks according to a probability distribution <i>p</i>. When predicting we use the full network without dropout and the scale weights by <i>p</i>.</p>
+
+<p>Effect of dropout is the averaging of all the thinned networks and this helps in generalization. According to <a href="http://papers.nips.cc/paper/4882-dropout-training-as-adaptive-regularization.pdf">this</a> Dropout has an effect of L2 Regularization.</p>
+
+<p>Also implementation wise it is suggested to use inverse dropout during training and not tinkle with anything on prediction side.</p>
+
+<p><br/></p>
+
+	</article>
+</main>
+
+<div id="bottom-nav" class="text-center center-block">
+	<a href=" https://ndeepesh.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
 </div>
 
 
-	<div class="panel panel-default">
-	<div class="panel-header">
-		<h3>
-			<a href="https://ndeepesh.github.io/post/dropout/"></a>
-			<br>
-			<small>
-				1 January 0001
-			</small>
-		</h3>
-	</div>
-	<div class="panel-body">
-		+++ date = &ldquo;2017-05-03T00:07:01-04:00&rdquo; title = &ldquo;Dropout Notes&rdquo; tags = [ &ldquo;Machine Learning&rdquo;, &ldquo;Regularization&rdquo;] categories = [ &ldquo;Machine Learning&rdquo; ] +++
-Note: Here is the original paper by Geoff Hinton introducing Dropout.
-Dropout Notes The core problem which Dropout tries to solve is Overfitting. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well.
-		
-			... <a href="https://ndeepesh.github.io/post/dropout/">Read More</a>
-		
-	</div>
-	<div class="panel-footer">
-		
-	</div>
-</div>
-
-
-
-<div class="text-center center-block">
-	
-    
-</div>
 
 						</div>
 					</div>
