@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ndeepesh.github.io/post/dropout/</loc>
+    <lastmod>2017-05-03T00:07:01-04:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ndeepesh.github.io/post/gradientdescentoptimizations/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
   </url>
@@ -12,12 +17,8 @@
   </url>
   
   <url>
-    <loc>https://ndeepesh.github.io/post/dropout/</loc>
-  </url>
-  
-  <url>
     <loc>https://ndeepesh.github.io/</loc>
-    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <lastmod>2017-05-03T00:07:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -29,19 +30,25 @@
   
   <url>
     <loc>https://ndeepesh.github.io/tags/machine-learning/</loc>
-    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <lastmod>2017-05-03T00:07:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ndeepesh.github.io/post/</loc>
-    <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <lastmod>2017-05-03T00:07:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ndeepesh.github.io/tags/python/</loc>
     <lastmod>2017-04-20T00:05:01-04:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ndeepesh.github.io/tags/regularization/</loc>
+    <lastmod>2017-05-03T00:07:01-04:00</lastmod>
     <priority>0</priority>
   </url>
   

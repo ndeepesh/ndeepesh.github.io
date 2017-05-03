@@ -6,10 +6,20 @@
     <description>Recent content in Machine Learning on Deepesh Nathani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 20 Apr 2017 00:05:01 -0400</lastBuildDate>
+    <lastBuildDate>Wed, 03 May 2017 00:07:01 -0400</lastBuildDate>
     
 	<atom:link href="https://ndeepesh.github.io/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Dropout Notes</title>
+      <link>https://ndeepesh.github.io/post/dropout/</link>
+      <pubDate>Wed, 03 May 2017 00:07:01 -0400</pubDate>
+      
+      <guid>https://ndeepesh.github.io/post/dropout/</guid>
+      <description>Note: Here is the original paper by Geoff Hinton introducing Dropout.
+Dropout Notes The core problem which Dropout tries to solve is Overfitting. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well. Another way to look at this problem(as described in the paper) is that there is just too much of dependency amoung neurons.</description>
+    </item>
     
     <item>
       <title>Gradient Descent Optimizations</title>
