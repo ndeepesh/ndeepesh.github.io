@@ -1,4 +1,5 @@
-+++ date = "2017-04-20T00:05:01-04:00" 
++++ 
+date = "2017-05-03T00:08:01-04:00" 
 title = "Dropout Notes" 
 tags = [ "Machine Learning", "Regularization"] categories = [ "Machine Learning" ] 
 +++
