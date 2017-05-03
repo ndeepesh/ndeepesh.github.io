@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regularization on Deepesh Nathani</title>
+    <link>https://ndeepesh.github.io/tags/regularization/</link>
+    <description>Recent content in Regularization on Deepesh Nathani</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 03 May 2017 00:08:01 -0400</lastBuildDate>
+    
+	<atom:link href="https://ndeepesh.github.io/tags/regularization/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dropout Notes</title>
+      <link>https://ndeepesh.github.io/post/dropout/</link>
+      <pubDate>Wed, 03 May 2017 00:08:01 -0400</pubDate>
+      
+      <guid>https://ndeepesh.github.io/post/dropout/</guid>
+      <description>Note: Here is the original paper by Geoff Hinton introducing Dropout.
+The core problem which Dropout tries to solve is Overfitting. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well. Another way to look at this problem(as described in the paper) is that there is just too much of dependency amoung neurons.</description>
+    </item>
+    
+  </channel>
+</rss>
