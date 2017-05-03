@@ -6,20 +6,10 @@
     <description>Recent content in Posts on Deepesh Nathani</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 03 May 2017 00:07:01 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 20 Apr 2017 00:05:01 -0400</lastBuildDate>
     
 	<atom:link href="https://ndeepesh.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Dropout Notes</title>
-      <link>https://ndeepesh.github.io/post/dropout/</link>
-      <pubDate>Wed, 03 May 2017 00:07:01 -0400</pubDate>
-      
-      <guid>https://ndeepesh.github.io/post/dropout/</guid>
-      <description>Note: Here is the original paper by Geoff Hinton introducing Dropout.
-Dropout Notes The core problem which Dropout tries to solve is Overfitting. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well. Another way to look at this problem(as described in the paper) is that there is just too much of dependency amoung neurons.</description>
-    </item>
     
     <item>
       <title>Gradient Descent Optimizations</title>
@@ -30,6 +20,17 @@ Dropout Notes The core problem which Dropout tries to solve is Overfitting. In N
       <description>Note: All the code here is also available in this notebook. Variable names will be different in notebook then here. 
 In this blog post we&amp;rsquo;ll talk about how different flavours of Gradient Descent help improve convergence of a function. Rosenbrock Function was taken for this experiment. It is a non-convex function, the one that we encounter regularly as Cost Functions in machine learning problems. Rosenbrock Function(Source: Wikipedia)
  Rosenbrock Function: $C(x, y) = (a-x)^2 + b(y-x^2)^2$  For this experiment values of both a and b is 1 Minimum value of Rosenbrock function then is 0 at (1, 1) Gradient of Rosenbrock Function w.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://ndeepesh.github.io/post/dropout/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://ndeepesh.github.io/post/dropout/</guid>
+      <description>+++ date = &amp;ldquo;2017-04-20T00:05:01-04:00&amp;rdquo; title = &amp;ldquo;Dropout Notes&amp;rdquo; tags = [ &amp;ldquo;Machine Learning&amp;rdquo;, &amp;ldquo;Regularization&amp;rdquo;] categories = [ &amp;ldquo;Machine Learning&amp;rdquo; ] +++
+Note: Here is the original paper by Geoff Hinton introducing Dropout.
+The core problem which Dropout tries to solve is Overfitting. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well.</description>
     </item>
     
   </channel>
