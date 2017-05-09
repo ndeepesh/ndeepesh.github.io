@@ -3,6 +3,7 @@ relativeURLs = false
 languageCode = "en-us"
 title = "Deepesh Nathani Blog"
 theme = "hugo-geo"
+disqusShortname = "ndeepesh-github-io"
 paginate = 5
 highlight = true
 
@@ -18,7 +19,7 @@ highlight = true
 	favicon = "/static/favicon.jpeg"
  	
 	# Google Analytics
-	# analytics = "SHORT-CODE-HERE"
+	analytics = "UA-98795273-1"
 
 	# Email
 	email = "ndeep_27@yahoo.com"
