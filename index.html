@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://ndeepesh.github.io/">
     <meta property="og:site_name" content="Deepesh Nathani">
     
-    <meta name="generator" content="Hugo 0.21-DEV" />
+    <meta name="generator" content="Hugo 0.25-DEV" />
     <title>Deepesh Nathani &middot; Deepesh Nathani</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -106,18 +106,18 @@
 	<div class="panel panel-default">
 	<div class="panel-header">
 		<h3>
-			<a href="https://ndeepesh.github.io/post/dropout/">Dropout Notes</a>
+			<a href="https://ndeepesh.github.io/post/tsne/">tSNE</a>
 			<br>
 			<small>
-				3 May 2017
+				5 July 2017
 			</small>
 		</h3>
 	</div>
 	<div class="panel-body">
-		Note: Here is the original paper by Geoff Hinton introducing Dropout.
-The core problem which Dropout tries to solve is Overfitting. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well. Another way to look at this problem(as described in the paper) is that there is just too much of dependency amoung neurons.
+		Recently, I came across an interesting non-linear visualization or dimensionality reduction method - tSNE(Distributed Stochastic Neighbour Embedding). Here is the original paper describing the method in much more detail. I thought i&rsquo;ll implement this from scratch. In this post I am sharing the code with extensive comments :)
+Before moving onto the code, here is a brief overview of how it works. tSNE is just like PCA where you can reduce the dimensionality of data to 2 or 3 dimensions to visualize it.
 		
-			... <a href="https://ndeepesh.github.io/post/dropout/">Read More</a>
+			... <a href="https://ndeepesh.github.io/post/tsne/">Read More</a>
 		
 	</div>
 	<div class="panel-footer">
@@ -125,9 +125,9 @@ The core problem which Dropout tries to solve is Overfitting. In Neural Networks
 		<small class="text-muted">
 			
 			
-				<a href="https://ndeepesh.github.io/tags/machine-learning"><span class="label label-success">Machine Learning</span></a>
+				<a href="https://ndeepesh.github.io/tags/dimensionality-reduction"><span class="label label-success">Dimensionality Reduction</span></a>
 			
-				<a href="https://ndeepesh.github.io/tags/regularization"><span class="label label-success">Regularization</span></a>
+				<a href="https://ndeepesh.github.io/tags/python"><span class="label label-success">Python</span></a>
 			
 		</small>
 		
@@ -173,7 +173,7 @@ In this blog post we&rsquo;ll talk about how different flavours of Gradient Desc
 
 <div class="text-center center-block">
 	
-    
+
 </div>
 
 						</div>

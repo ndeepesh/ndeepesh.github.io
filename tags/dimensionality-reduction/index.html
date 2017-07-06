@@ -4,21 +4,16 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
     <meta name="description" content="">
-    <meta property="og:title" content="Dropout Notes">
+    <meta property="og:title" content="Dimensionality Reduction">
     
-    <meta property="og:type" content="article">
-    <meta property="article:published_time" content="2017-05-03">
+    <meta property="og:type" content="website">
     
     <meta property="og:description" content="">
-    <meta property="og:url" content="https://ndeepesh.github.io/post/dropout/">
+    <meta property="og:url" content="https://ndeepesh.github.io/tags/dimensionality-reduction/">
     <meta property="og:site_name" content="Deepesh Nathani">
     
-    <meta property="og:tags" content="Machine Learning">
-    
-    <meta property="og:tags" content="Regularization">
-    
-    <meta name="generator" content="Hugo 0.21-DEV" />
-    <title>Dropout Notes &middot; Deepesh Nathani</title>
+    <meta name="generator" content="Hugo 0.25-DEV" />
+    <title>Dimensionality Reduction &middot; Deepesh Nathani</title>
     
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="/css/prism.css" rel="stylesheet" />
@@ -100,63 +95,16 @@
 				<div id="post" class="col-sm-offset-1 col-sm-10 col-md-10 col-lg-8">
 
 
-<main>
+<article>
 	<header>
-		<h1>Dropout Notes</h1>
+		<h1>Dimensionality Reduction</a></h1>
 	</header>
-
-	<article>
-		<p><b>Note</b>: <a href="http://www.jmlr.org/papers/volume15/srivastava14a.old/source/srivastava14a.pdf">Here</a> is the original paper by Geoff Hinton introducing Dropout.</p>
-
-<p>The core problem which Dropout tries to solve is <b><i>Overfitting</b></i>. In Neural Networks(especially Deep Neural Networks) the number of parameters to optimize are way too much. This leads to overfitting on train-set i.e. they tend to learn the noise in train-set and are not able to generalize well. Another way to look at this problem(as described in the paper) is that there is just too much of dependency amoung neurons.</p>
-
-<p>Dropout tries to address this problem by <b><i>randomly</b></i> dropping weights(and their corresponding neurons) while training(not in prediction cycle). Errors propagated backwards in backpropagation will also be 0 along that weight. In each training epoch we randomly drop weights i.e. we randomly choose a thinned network out of many possible($O(n^2)$) networks according to a probability distribution <i>p</i>. When predicting we use the full network without dropout and the scale weights by <i>p</i>.</p>
-
-<p>Effect of dropout is the averaging of all the thinned networks and this helps in generalization. According to <a href="http://papers.nips.cc/paper/4882-dropout-training-as-adaptive-regularization.pdf">this</a> Dropout has an effect of L2 Regularization.</p>
-
-<p>Also implementation wise it is suggested to use inverse dropout during training and not tinkle with anything on prediction side.</p>
-
-<p><b>More Resources</b><br/>
-<a href="http://iamtrask.github.io/2015/07/28/dropout/">Good Intuition</a> by Andrew Trask</p>
-
-	</article>
-</main>
-
-<div id="bottom-nav" class="text-center center-block">
-	<a href=" https://ndeepesh.github.io/" class="btn btn-default"><i class="fa fa-home"></i> Home</a>
-</div>
-
-
-  <a href="#" id="disqus_load" onclick="return loadDisqus()">Add / View Comments</a>
-<div id="disqus_thread"></div>
-
-<script type="text/javascript">
-  var disqus_shortname = 'ndeepesh-github-io';
-  function loadDisqus() {
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  
-  document.getElementById('disqus_load').style.display = 'none';
-  return false;
-}
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-98795273-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+<ul>
+	
+	<li><a href="https://ndeepesh.github.io/post/tsne/">tSNE</a></li>
+	
+</ul>
+</article>
 
 						</div>
 					</div>
@@ -197,4 +145,3 @@
 </body>
 <script src="https://ndeepesh.github.io//js/prism.js"></script>
 </html>
-
