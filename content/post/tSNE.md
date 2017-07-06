@@ -1,3 +1,11 @@
++++
+date = "2017-07-05T00:05:01-04:00"
+title = "tSNE"
+tags = ["Dimensionality Reduction", "Python"]
+categories = [ "Machine Learning" ]
+project_url = "https://github.com/ndeepesh/MachineLearning-Experiments/blob/master/experiments/tSNE.ipynb"
++++
+
 Recently, I came across an interesting non-linear visualization or dimensionality reduction method - tSNE(Distributed Stochastic Neighbour Embedding). [Here](http://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf) is the original paper describing the method in much more detail. I thought i'll implement this from scratch. In this post I am sharing the code with extensive comments :)
 
 Before moving onto the code, here is a brief overview of how it works. tSNE is just like PCA where you can reduce the dimensionality of data to 2 or 3 dimensions to visualize it. But unlike PCA, tSNE does that using non-linear ways. It converts everything to probability distributions. Next I'll list down the steps on a high level for a bigger picture. <br/>
