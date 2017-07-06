@@ -200,5 +200,5 @@ plt.show()
 ```
 
 
-![png](../static/tSNE/output_8_0.png)
+![png](../../static/tSNE/output_8_0.png)
 
